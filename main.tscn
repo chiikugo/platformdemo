@@ -1,0 +1,27 @@
+[gd_scene load_steps=3 format=3 uid="uid://py2nopprujdi"]
+
+[ext_resource type="Script" path="res://main.gd" id="1_jiqt8"]
+[ext_resource type="PackedScene" uid="uid://b15huok64f5b7" path="res://player/bg.tscn" id="2_28gjb"]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_jiqt8")
+
+[node name="play" type="Button" parent="."]
+offset_left = 433.0
+offset_top = 54.0
+offset_right = 777.0
+offset_bottom = 287.0
+text = "Play Now"
+
+[node name="quit" type="Button" parent="."]
+offset_left = 440.0
+offset_top = 418.0
+offset_right = 766.0
+offset_bottom = 603.0
+tooltip_text = "this is the quit buttoon"
+text = "Quit"
+
+[node name="bg" parent="." instance=ExtResource("2_28gjb")]
+
+[connection signal="pressed" from="play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="quit" to="." method="_on_quit_pressed"]
